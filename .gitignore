@@ -1,0 +1,5 @@
+.gitignore
+.idea
+netcoreapp3.1
+obj
+bin
