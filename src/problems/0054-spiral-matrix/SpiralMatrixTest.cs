@@ -1,7 +1,7 @@
 using System;
 using FluentAssertions;
 
-namespace leetcode.problems
+namespace leetcode.problems.SpiralMatrix
 {
     public static class SpiralMatrixTest
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace leetcode.problems
+namespace leetcode.problems.SpiralMatrix
 {
     public class Solution
     {

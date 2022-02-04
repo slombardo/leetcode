@@ -1,11 +1,10 @@
-﻿using System;
-using leetcode.problems;
+﻿using leetcode.problems.SpiralMatrix;
 
 namespace leetcode
 {
     static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             SpiralMatrixTest.RunTests();
         }
