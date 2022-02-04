@@ -14,7 +14,7 @@ namespace leetcode.problems.MergeSortedArray
                 var maxIndex = m + i - 1;
                 if (maxIndex < 0) maxIndex = 0;
                 var numberToMerge = nums2[i];
-                var failsafe = 100;
+                var failsafe = m + n;
 
                 do
                 {
