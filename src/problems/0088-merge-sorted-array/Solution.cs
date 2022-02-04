@@ -1,5 +1,3 @@
-using System;
-
 namespace leetcode.problems.MergeSortedArray
 {
     public class Solution
@@ -29,7 +27,6 @@ namespace leetcode.problems.MergeSortedArray
                         ShiftRight(nums1, shiftFromIndex);
 
                         nums1[shiftFromIndex] = numberToMerge;
-                        Console.WriteLine(string.Join(",", nums1));
                         break;
                     }
 
@@ -50,7 +47,6 @@ namespace leetcode.problems.MergeSortedArray
 
         private static int GetMiddle(int min, int max)
         {
-            Console.WriteLine($"{min}, {max}");
             if (min >= max) return min;
             var totalNumbersToCheck = max - min;
             var middle = totalNumbersToCheck / 2 + min;
@@ -60,7 +56,7 @@ namespace leetcode.problems.MergeSortedArray
 
 /*
     if n is 0 exit
-    For each number in nums2, remove the final record in nums1
+    For each number in nums2
     Bubble sort to Find the proper index of the current number to merge
     Shift each number over
     Insert number at the proper index
