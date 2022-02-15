@@ -1,9 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
-using NUnit.Framework;
 
 namespace leetcode.problems.ValidParentheses
 {
@@ -11,36 +7,31 @@ namespace leetcode.problems.ValidParentheses
         public bool IsValid(string s)
         {
             if (s.Length % 2 == 1) return false;
-            var index = 0;
-            return ValidateOpenClose(s, ref index);
-        }
 
-        private static bool ValidateOpenClose(string s, ref int index)
-        {
-            var open = s[index++];
-            if (open is not ('{' or '[' or '(')) return false;
-            if (index >= s.Length) return false;
+            var openStack = new Stack<char>();
 
-            while (index < s.Length)
+            for (var index = 0; index < s.Length; index++)
             {
-                var next = s[index];
-                if (
-                    open == '(' && next == ')'
-                    || open == '{' && next == '}'
-                    || open == '[' && next == ']'
-                )
+                var c = s[index];
+                if (c is '{' or '[' or '(')
                 {
-                    index++;
-                    return true;
+                    openStack.Push(c);
+                    continue;
                 }
 
-                if (next is '{' or '[' or '(')
-                {
-                    if (!ValidateOpenClose(s, ref index)) return false;
-                }
+                if (!openStack.Any() || openStack.Count > s.Length - index) return false;
+
+                var open = openStack.Pop();
+                if (
+                    open == '(' && c == ')'
+                    || open == '{' && c == '}'
+                    || open == '[' && c == ']'
+                ) continue;
+
+                return false;
             }
 
-            return false;
+            return !openStack.Any();
         }
     }
 }
