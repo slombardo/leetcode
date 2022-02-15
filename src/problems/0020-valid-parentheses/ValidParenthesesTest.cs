@@ -46,6 +46,11 @@ namespace leetcode.problems.ValidParentheses
             },
             new ValidParenthesesExpectations
             {
+                S = "((",
+                Expectation = false
+            },
+            new ValidParenthesesExpectations
+            {
                 S = "()()",
                 Expectation = true
             },
