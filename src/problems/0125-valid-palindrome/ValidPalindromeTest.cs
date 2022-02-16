@@ -67,7 +67,7 @@ namespace leetcode.problems.ValidPalindrome
             new ValidPalindromeExpectations
             {
                 S = "0P",
-                Expectation = true
+                Expectation = false
             },
         };
         
