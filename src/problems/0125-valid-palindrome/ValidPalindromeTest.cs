@@ -21,6 +21,11 @@ namespace leetcode.problems.ValidPalindrome
             },
             new ValidPalindromeExpectations
             {
+                S = "...A man, a plan, a canal: Panama[=][",
+                Expectation = true
+            },
+            new ValidPalindromeExpectations
+            {
                 S = "race a car",
                 Expectation = false
             },
@@ -31,17 +36,37 @@ namespace leetcode.problems.ValidPalindrome
             },
             new ValidPalindromeExpectations
             {
+                S = "race e-car",
+                Expectation = true
+            },
+            new ValidPalindromeExpectations
+            {
                 S = "anagramargana",
                 Expectation = true
             },
             new ValidPalindromeExpectations
             {
-                S = "a1nagra2m2argan1a",
+                S = "a1nagra2m2argan1A",
                 Expectation = true
             },
             new ValidPalindromeExpectations
             {
                 S = "",
+                Expectation = true
+            },
+            new ValidPalindromeExpectations
+            {
+                S = ".",
+                Expectation = true
+            },
+            new ValidPalindromeExpectations
+            {
+                S = ".,",
+                Expectation = true
+            },
+            new ValidPalindromeExpectations
+            {
+                S = "0P",
                 Expectation = true
             },
         };
@@ -51,12 +76,14 @@ namespace leetcode.problems.ValidPalindrome
         {
             // Arrange
             var solution = new Solution();
+            var solution2 = new Solution2();
 
             // Act
             var result = solution.IsPalindrome(testCase.S);
-
+            var result2 = solution2.IsPalindrome(testCase.S);
             // Assert
             result.Should().Be(testCase.Expectation);
+            result2.Should().Be(testCase.Expectation);
 
             Console.WriteLine("0125 valid-palindrome tests Success!");
         }
