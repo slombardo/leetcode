@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace leetcode.problems.PascalsTriangleII
 {
@@ -8,7 +7,7 @@ namespace leetcode.problems.PascalsTriangleII
     {
         public IList<int> GetRow(int rowIndex)
         {
-            IList<int> previousRow = null;
+            var previousRow = new List<int>();
 
             for (var i = 0; i <= rowIndex; i++)
             {

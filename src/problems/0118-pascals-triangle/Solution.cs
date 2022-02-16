@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace leetcode.problems.PascalsTriangle
 {
@@ -15,7 +14,7 @@ namespace leetcode.problems.PascalsTriangle
              if the size is greater than 2, get previous row's same index and one less and add
              */
             var result = new List<IList<int>>();
-            IList<int> previousRow = null;
+            var previousRow = new List<int>();
             
             for (var rowIndex = 1; rowIndex <= numRows; rowIndex++)
             {
