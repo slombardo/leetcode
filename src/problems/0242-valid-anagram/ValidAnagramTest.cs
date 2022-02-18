@@ -42,6 +42,12 @@ namespace leetcode.problems.ValidAnagram
             new ValidAnagramExpectations
             {
                 S = "anagram",
+                T= "ana gra m",
+                Expectation = true
+            },
+            new ValidAnagramExpectations
+            {
+                S = "anagram",
                 T= "",
                 Expectation = false
             },
