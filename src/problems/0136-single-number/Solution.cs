@@ -61,9 +61,23 @@ namespace leetcode.problems.SingleNumber
         {
             return nums.GroupBy(i => i)
                 .Where(g => g.Count() == 1)
-                .Select(g => g.First()).FirstOrDefault();
+                .Select(g => g.First())
+                .FirstOrDefault();
         }
     }
-    
-    
+
+    /// <summary>
+    /// Found here: https://leetcode.com/problems/single-number/discuss/1137987/C-math-one-liner
+    /// Really liked this one.  Reminded me that sometimes, objects are just... numbers.
+    /// </summary>
+    public class Solution3
+    {
+        /// <remarks>
+        /// Quick maths
+        /// </remarks>
+        public int SingleNumber(int[] nums)
+        {
+            return nums.Distinct().Sum() * 2 - nums.Sum();
+        }
+    }
 }

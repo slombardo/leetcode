@@ -94,14 +94,17 @@ namespace leetcode.problems.SingleNumber
         {
             // Arrange
             var solution1 = new Solution();
-            var solution3 = new Solution2();
+            var solution2 = new Solution2();
+            var solution3 = new Solution3();
 
             // Act
             var result1 = solution1.SingleNumber(testCase.Nums);
+            var result2 = solution2.SingleNumber(testCase.Nums);
             var result3 = solution3.SingleNumber(testCase.Nums);
 
             // Assert
             result1.Should().Be(testCase.Expectation);
+            result2.Should().Be(testCase.Expectation);
             result3.Should().Be(testCase.Expectation);
 
             Console.WriteLine("0136 single-number tests Success!");
