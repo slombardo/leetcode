@@ -1,22 +1,23 @@
+using System;
+using System.Linq;
+
 namespace leetcode.problems.MaximumAverageSubarrayI
 {
     public class Solution
     {
         public double FindMaxAverage(int[] nums, int k)
         {
-            double? currentLargestAverage = null;
-            double runningTotal = 0;
-            for (var i = 0; i < nums.Length; i++)
-            {
-                runningTotal += nums[i];
-                if (i < k - 1) continue;
-                if (i >= k) runningTotal -= nums[i - (k)];
+            double runningTotal = nums.Take(k).Sum();
+            var currentLargestAverage = runningTotal / k;
 
-                var average = runningTotal / k;
-                if (!currentLargestAverage.HasValue || currentLargestAverage < average) currentLargestAverage = average;
+            for (var i = k; i < nums.Length; i++)
+            {
+                runningTotal -= nums[i - k];
+                runningTotal += nums[i];
+                currentLargestAverage = Math.Max(currentLargestAverage, runningTotal / k);
             }
 
-            return currentLargestAverage ?? 0;
+            return currentLargestAverage;
         }
     }
 }
