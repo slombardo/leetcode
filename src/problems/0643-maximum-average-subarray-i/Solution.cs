@@ -7,17 +7,17 @@ namespace leetcode.problems.MaximumAverageSubarrayI
     {
         public double FindMaxAverage(int[] nums, int k)
         {
-            double runningTotal = nums.Take(k).Sum();
-            var currentLargestAverage = runningTotal / k;
+            var runningTotal = nums.Take(k).Sum();
+            var currentLargestSum = runningTotal;
 
             for (var i = k; i < nums.Length; i++)
             {
                 runningTotal -= nums[i - k];
                 runningTotal += nums[i];
-                currentLargestAverage = Math.Max(currentLargestAverage, runningTotal / k);
+                currentLargestSum = Math.Max(currentLargestSum, runningTotal);
             }
 
-            return currentLargestAverage;
+            return (double)currentLargestSum / k;
         }
     }
 }
