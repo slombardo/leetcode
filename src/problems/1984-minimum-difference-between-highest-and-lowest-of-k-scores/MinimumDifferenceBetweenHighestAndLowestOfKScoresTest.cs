@@ -47,7 +47,7 @@ namespace leetcode.problems.MinimumDifferenceBetweenHighestAndLowestOfKScores
             // Assert
             result.Should().Be(testCase.Expectation);
 
-            Console.WriteLine("1984 sminimum-difference-between-highest-and-lowest-of-k-scores tests Success!");
+            Console.WriteLine("1984 minimum-difference-between-highest-and-lowest-of-k-scores tests Success!");
         }
     }
 }
