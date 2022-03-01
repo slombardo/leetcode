@@ -18,17 +18,25 @@ namespace leetcode.problems.LongestNiceSubstring
                 if(next.Length <= longest.Length) continue;
 
                 var hasNonNice = false;
+
+                // look for the first non-nice char
                 for (var i = 0; i < next.Length; i++)
                 {
                     var c = next[i];
                     var match = GetRespectiveMatch(c);
 
-                    // see if there is no match
                     hasNonNice = !next.Contains(match);
                     if (!hasNonNice) continue;
 
-                    foreach (var split in next.Split(c, StringSplitOptions.RemoveEmptyEntries).Reverse())
+                    // Since there is a non-nice, split the string there.
+                    // We are iterating backwards since stack is "filo" and we want the left most string to be processed first.
+                    var splits = next.Split(c, StringSplitOptions.RemoveEmptyEntries);
+                    for (var j = splits.Length - 1; j >= 0; j--)
                     {
+                        var split = splits[j];
+                        // if the split is already smaller than or equal to the longest, toss it.
+                        if(split.Length <= longest.Length) continue;
+
                         toProcess.Push(split);
                     }
 
