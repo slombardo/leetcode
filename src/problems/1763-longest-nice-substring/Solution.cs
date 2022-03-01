@@ -24,19 +24,17 @@ namespace leetcode.problems.LongestNiceSubstring
 
                     // see if there is no match
                     hasNonNice = !next.Contains(match);
-
-                    // if there is no match split and queue
                     if (!hasNonNice) continue;
 
                     foreach (var split in next.Split(c, StringSplitOptions.RemoveEmptyEntries).Reverse())
                     {
                         toProcess.Push(split);
                     }
+
                     break;
                 }
 
-                if(hasNonNice) continue;
-
+                if (hasNonNice) continue;
                 if (next.Length > longest.Length) longest = next;
             }
 
@@ -46,7 +44,7 @@ namespace leetcode.problems.LongestNiceSubstring
         private static char GetRespectiveMatch(char c)
         {
             const int difference = 'a' - 'A';
-            return (char) (c < 'a' ? c + difference : c - difference);
+            return (char)(c < 'a' ? c + difference : c - difference);
         }
     }
 }
