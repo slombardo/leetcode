@@ -32,14 +32,17 @@ namespace leetcode.problems.MajorityElement
             // Arrange
             var solution = new Solution();
             var solution2 = new Solution2();
+            var solution3 = new Solution3();
 
             // Act
             var result = solution.MajorityElement(testCase.Nums);
             var result2 = solution2.MajorityElement(testCase.Nums);
+            var result3 = solution3.MajorityElement(testCase.Nums);
 
             // Assert
             result.Should().Be(testCase.Expectation);
             result2.Should().Be(testCase.Expectation);
+            result3.Should().Be(testCase.Expectation);
 
             Console.WriteLine("0169 majority-element tests Success!");
         }

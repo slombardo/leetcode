@@ -32,4 +32,30 @@ namespace leetcode.problems.MajorityElement
             throw new ArgumentException($"{nameof(nums)} does not have a majority.");
         }
     }
+    public class Solution3
+    {
+        public int MajorityElement(int[] nums)
+        {
+            var current = -1;
+            var count = 0;
+
+            foreach (var number in nums)
+            {
+                if (count == 0)
+                {
+                    current = number;
+                }
+
+                if (number == current)
+                {
+                    count++;
+                    continue;
+                }
+
+                count--;
+            }
+
+            return current;
+        }
+    }
 }
