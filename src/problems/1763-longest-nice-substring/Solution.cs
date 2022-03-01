@@ -15,6 +15,7 @@ namespace leetcode.problems.LongestNiceSubstring
             while (toProcess.Any())
             {
                 var next = toProcess.Pop();
+                if(next.Length <= longest.Length) continue;
 
                 var hasNonNice = false;
                 for (var i = 0; i < next.Length; i++)
