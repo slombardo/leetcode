@@ -11,8 +11,7 @@ namespace leetcode.problems.MaximumSubarray
 
             foreach (var current in nums)
             {
-                if (runningTotal + current < current) runningTotal = 0;
-                runningTotal += current;
+                runningTotal = Math.Max(runningTotal + current, current);
                 currentMax = Math.Max(currentMax, runningTotal);
             }
 
