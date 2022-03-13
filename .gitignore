@@ -4,3 +4,4 @@ netcoreapp3.1
 obj
 bin
 *.user
+/node_modules
