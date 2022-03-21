@@ -25,7 +25,7 @@ const isHappy = function (n) {
         // console.log(`current is: ${current}`);
     }
 
-    return true;
+    return failsafe !== 0;
 };
 
 module.exports = {
