@@ -1,5 +1,5 @@
 const uglyNumber = require("./ugly-number");
-describe("isPowerOfTwo", () => {
+describe("Ugly Number", () => {
     const cases = [
         {n: 1, expected: true},
         {n: 4, expected: true},
