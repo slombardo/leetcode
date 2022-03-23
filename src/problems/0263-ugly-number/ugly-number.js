@@ -24,7 +24,7 @@ const wayTooBruteForce = function (n) {
 
 /* Abandoned.  Sad trombone */
 const primeShortcuts = function (n) {
-    if (n < 0) return false;
+    if (n <= 0) return false;
     const endCheck = /[024568]/;
     for (let i = 7; i <= n; i++) {
 
@@ -58,7 +58,7 @@ const primeShortcuts = function (n) {
  * @return {boolean}
  */
 const bruteForce = function (n) {
-    if (n < 0) return false;
+    if (n <= 0) return false;
     const uglyPrimes = [5, 3, 2];
 
     for (const uglyPrime of uglyPrimes) {
