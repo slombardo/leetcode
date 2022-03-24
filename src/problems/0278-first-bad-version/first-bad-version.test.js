@@ -6,7 +6,7 @@ describe("First Bad Version", () => {
         {n: 1, bad: 1, expected: 1},
     ];
 
-    it.each(cases)(`bruteForce should return $expected, since it is missing from $n`,
+    it.each(cases)(`binarySearch should return $expected, since it is the first bad version of $n`,
         async ({n, bad, expected}) => {
             // arrange
             const isBadVersion = (version) => version >= bad;
