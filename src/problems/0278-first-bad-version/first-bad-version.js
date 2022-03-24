@@ -24,7 +24,7 @@ const binarySearch = function (isBadVersion) {
         while (true){
             const mid = Math.ceil((right - left) / 2) + left;
 
-            // if middle is a bad version, then look left
+            // if middle is not a bad version, then look right
             if(!isBadVersion(mid)){
                 left = mid;
                 continue;
@@ -32,6 +32,7 @@ const binarySearch = function (isBadVersion) {
 
             if(left === mid - 1) return mid;
 
+            // look left
             right = mid;
         }
     };
